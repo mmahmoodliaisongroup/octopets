@@ -250,6 +250,27 @@
             font-weight: 500;
         }
 
+        .book-button {
+            background: #FF7043;
+            color: white;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 1rem;
+            width: 100%;
+            box-shadow: 0 2px 10px rgba(255, 112, 67, 0.3);
+        }
+
+        .book-button:hover {
+            background: #FF5722;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 112, 67, 0.4);
+        }
+
         /* Sign Up Section */
         .signup {
             padding: 4rem 0;
@@ -405,6 +426,238 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Booking Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 0;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideUp 0.3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, #4CAF50, #2E7D32);
+            color: white;
+            padding: 1.5rem;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .close {
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 1;
+            transition: opacity 0.3s;
+        }
+
+        .close:hover {
+            opacity: 0.7;
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #2E7D32;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #E8F5E8;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #4CAF50;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .booking-summary {
+            background: #f0f8f0;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        .booking-summary h3 {
+            color: #2E7D32;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .booking-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+            margin-top: 2rem;
+        }
+
+        .btn-cancel {
+            background: #666;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .btn-cancel:hover {
+            background: #555;
+        }
+
+        .btn-book {
+            background: #4CAF50;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 2px 10px rgba(76, 175, 80, 0.3);
+        }
+
+        .btn-book:hover {
+            background: #45a049;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+        }
+
+        /* Bookings Section */
+        .bookings-section {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .my-bookings {
+            margin-top: 2rem;
+        }
+
+        .booking-item {
+            background: #f0f8f0;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #4CAF50;
+        }
+
+        .booking-item h4 {
+            color: #2E7D32;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .booking-item p {
+            margin: 0.25rem 0;
+            color: #666;
+        }
+
+        .booking-status {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+
+        .status-confirmed {
+            background: #E8F5E8;
+            color: #2E7D32;
+        }
+
+        @media (max-width: 768px) {
+            .modal-content {
+                margin: 10% auto;
+                width: 95%;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .booking-actions {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 <body>
@@ -417,6 +670,7 @@
                     <ul class="nav-links">
                         <li><a href="#how-it-works">How It Works</a></li>
                         <li><a href="#featured">Locations</a></li>
+                        <li><a href="#bookings">Bookings</a></li>
                         <li><a href="#signup">Join Us</a></li>
                     </ul>
                 </nav>
@@ -474,6 +728,7 @@
                             <span class="tag">Off-Leash</span>
                             <span class="tag">Walking Trail</span>
                         </div>
+                        <button class="book-button" onclick="openBookingModal('Riverside Dog Park', '🌳')">Book Now</button>
                     </div>
                 </div>
                 <div class="location-card fade-in">
@@ -486,6 +741,7 @@
                             <span class="tag">Pet Menu</span>
                             <span class="tag">Outdoor Seating</span>
                         </div>
+                        <button class="book-button" onclick="openBookingModal('Paws & Coffee Café', '☕')">Book Now</button>
                     </div>
                 </div>
                 <div class="location-card fade-in">
@@ -498,6 +754,7 @@
                             <span class="tag">Pet Amenities</span>
                             <span class="tag">Luxury</span>
                         </div>
+                        <button class="book-button" onclick="openBookingModal('The Pet Palace Hotel', '🏨')">Book Now</button>
                     </div>
                 </div>
             </div>
@@ -531,6 +788,95 @@
             <p>&copy; 2025 Meetup: Pet Friendly Locations. Made with ❤️ for pet lovers everywhere.</p>
         </div>
     </footer>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Book Your Venue</h2>
+                <span class="close" onclick="closeBookingModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="booking-summary">
+                    <h3><span id="venueIcon">🏨</span><span id="venueName">Venue Name</span></h3>
+                    <p>Reserve your spot at this pet-friendly location</p>
+                </div>
+                
+                <form id="bookingForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="bookingDate">Date:</label>
+                            <input type="date" id="bookingDate" name="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingTime">Time:</label>
+                            <input type="time" id="bookingTime" name="time" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="numberOfPeople">Number of People:</label>
+                            <select id="numberOfPeople" name="people" required>
+                                <option value="">Select...</option>
+                                <option value="1">1 Person</option>
+                                <option value="2">2 People</option>
+                                <option value="3">3 People</option>
+                                <option value="4">4 People</option>
+                                <option value="5+">5+ People</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="numberOfPets">Number of Pets:</label>
+                            <select id="numberOfPets" name="pets" required>
+                                <option value="">Select...</option>
+                                <option value="1">1 Pet</option>
+                                <option value="2">2 Pets</option>
+                                <option value="3">3 Pets</option>
+                                <option value="4+">4+ Pets</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contactName">Your Name:</label>
+                            <input type="text" id="contactName" name="name" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactPhone">Phone Number:</label>
+                            <input type="tel" id="contactPhone" name="phone" placeholder="(555) 123-4567" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactEmail">Email Address:</label>
+                        <input type="email" id="contactEmail" name="email" placeholder="your.email@example.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="specialRequests">Special Requests/Notes:</label>
+                        <textarea id="specialRequests" name="notes" placeholder="Any special requirements for you or your pets..."></textarea>
+                    </div>
+                    
+                    <div class="booking-actions">
+                        <button type="button" class="btn-cancel" onclick="closeBookingModal()">Cancel</button>
+                        <button type="submit" class="btn-book">Confirm Booking</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bookings Section -->
+    <section class="bookings-section" id="bookings" style="display: none;">
+        <div class="container">
+            <h2 class="section-title">My Bookings</h2>
+            <div class="my-bookings" id="bookingsList">
+                <p style="text-align: center; color: #666;">No bookings yet. Book a venue to see your reservations here!</p>
+            </div>
+        </div>
+    </section>
 
     <script>
         // Smooth scrolling for navigation links
@@ -626,6 +972,132 @@
                     }, index * 100);
                 });
             }, 300);
+            
+            // Load bookings on page load
+            displayBookings();
+        });
+
+        // Booking functionality
+        let currentBooking = {};
+
+        function openBookingModal(venueName, venueIcon) {
+            currentBooking.venue = venueName;
+            currentBooking.icon = venueIcon;
+            
+            document.getElementById('venueName').textContent = venueName;
+            document.getElementById('venueIcon').textContent = venueIcon;
+            document.getElementById('bookingModal').style.display = 'block';
+            
+            // Set minimum date to today
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('bookingDate').min = today;
+        }
+
+        function closeBookingModal() {
+            document.getElementById('bookingModal').style.display = 'none';
+            document.getElementById('bookingForm').reset();
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('bookingModal');
+            if (event.target === modal) {
+                closeBookingModal();
+            }
+        }
+
+        // Handle booking form submission
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const booking = {
+                id: Date.now(),
+                venue: currentBooking.venue,
+                icon: currentBooking.icon,
+                date: formData.get('date'),
+                time: formData.get('time'),
+                people: formData.get('people'),
+                pets: formData.get('pets'),
+                name: formData.get('name'),
+                phone: formData.get('phone'),
+                email: formData.get('email'),
+                notes: formData.get('notes'),
+                status: 'confirmed',
+                bookedAt: new Date().toISOString()
+            };
+            
+            // Save booking to localStorage
+            saveBooking(booking);
+            
+            // Show success message
+            alert(`🎉 Booking confirmed for ${booking.venue}!\n\nDate: ${formatDate(booking.date)}\nTime: ${booking.time}\n\nA confirmation email will be sent to ${booking.email}`);
+            
+            // Close modal and refresh bookings
+            closeBookingModal();
+            displayBookings();
+            
+            // Show bookings section
+            showBookingsSection();
+        });
+
+        function saveBooking(booking) {
+            let bookings = JSON.parse(localStorage.getItem('petMeetupBookings') || '[]');
+            bookings.push(booking);
+            localStorage.setItem('petMeetupBookings', JSON.stringify(bookings));
+        }
+
+        function getBookings() {
+            return JSON.parse(localStorage.getItem('petMeetupBookings') || '[]');
+        }
+
+        function displayBookings() {
+            const bookings = getBookings();
+            const container = document.getElementById('bookingsList');
+            
+            if (bookings.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: #666;">No bookings yet. Book a venue to see your reservations here!</p>';
+                return;
+            }
+            
+            container.innerHTML = bookings.map(booking => `
+                <div class="booking-item">
+                    <h4>${booking.icon} ${booking.venue}</h4>
+                    <p><strong>Date:</strong> ${formatDate(booking.date)} at ${booking.time}</p>
+                    <p><strong>Party:</strong> ${booking.people} people, ${booking.pets} pets</p>
+                    <p><strong>Contact:</strong> ${booking.name} (${booking.phone})</p>
+                    ${booking.notes ? `<p><strong>Notes:</strong> ${booking.notes}</p>` : ''}
+                    <span class="booking-status status-confirmed">✓ Confirmed</span>
+                </div>
+            `).join('');
+        }
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+        }
+
+        function showBookingsSection() {
+            const bookingsSection = document.getElementById('bookings');
+            bookingsSection.style.display = 'block';
+            
+            // Scroll to bookings section
+            setTimeout(() => {
+                bookingsSection.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+        }
+
+        // Update navigation to show/hide bookings section
+        document.querySelectorAll('a[href="#bookings"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                showBookingsSection();
+            });
         });
     </script>
 </body>
